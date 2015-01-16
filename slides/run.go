@@ -22,7 +22,7 @@ func main() {
                 docker.PortBinding{HostPort: "8000"},
             },
         },
-        Binds: []string{"/var/www,/usr/share/nginx/html:ro"},
+        Binds: []string{"/opt/workspace/src/github.com/IanMLewis/docker_meetup_slides:/usr/share/nginx/html:ro"},
     })
 
     fmt.Println("ID: ", c.ID)

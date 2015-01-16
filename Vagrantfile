@@ -24,7 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # Share the slides folder with the workspace.
     config.vm.synced_folder "slides/", "/opt/workspace/src/github.com/IanMLewis/docker_meetup_slides"
-    config.vm.synced_folder "html/", "/var/www"
 
     config.vm.provision "shell", path: "provision.sh"
 end

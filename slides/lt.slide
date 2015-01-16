@@ -39,6 +39,12 @@ http://www.ianlewis.org/
 
 .play run.go  /CreateContainer/,/Created/
 
+* Nginx 起動している
+
+.link http://192.168.33.10:8000/
+
+.code index.html
+
 * おれおれ docker ps
 
 .play containers.go  /ListContainers/,/^    }/
