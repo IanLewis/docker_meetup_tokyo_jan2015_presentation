@@ -23,4 +23,4 @@ http://localhost:3999/lt.slide で資料を見ることができる。
 
 すぐ見れるけど、コード動かすことができないバージョンも用意しています。
 
-http://IanMLewis.github.io/docker\_meetup\_tokyo\_jan2015\_presentation
+http://IanMLewis.github.io/docker_meetup_tokyo_jan2015_presentation
