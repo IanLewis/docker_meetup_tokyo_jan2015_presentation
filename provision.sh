@@ -2,44 +2,44 @@
 
 set -e
 
-# # Install docker
-# curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+# Install docker
+curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 
-# # Install mercurial
-# apt-get install -y mercurial
+# Install mercurial
+apt-get install -y mercurial
 
-# # Install go
-# cd /opt
-# wget --no-verbose https://storage.googleapis.com/golang/go1.4.1.linux-amd64.tar.gz
-# tar xzf go1.4.1.linux-amd64.tar.gz
+# Install go
+cd /opt
+wget --no-verbose https://storage.googleapis.com/golang/go1.4.1.linux-amd64.tar.gz
+tar xzf go1.4.1.linux-amd64.tar.gz
 
-# cat <<EOF > /etc/environment
-# PATH="/opt/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# GOROOT=/opt/go
-# GOPATH=/opt/workspace
-# EOF
+cat <<EOF > /etc/environment
+PATH="/opt/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+GOROOT=/opt/go
+GOPATH=/opt/workspace
+EOF
 
-# # Create the go workspace
-# mkdir -p /opt/workspace
+# Create the go workspace
+mkdir -p /opt/workspace
 
-# # Export environment so we can use it.
-# export PATH="/opt/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# export GOROOT=/opt/go
-# export GOPATH=/opt/workspace
+# Export environment so we can use it.
+export PATH="/opt/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export GOROOT=/opt/go
+export GOPATH=/opt/workspace
 
-# cd $GOPATH
-# # Get the present tool
-# # TODO: I'd like to use the git repo but it seems not to work right now.
-# # go get github.com/golang/tools/cmd/present
-# echo "Installing cmd/present..."
-# go get code.google.com/p/go.tools/cmd/present
+cd $GOPATH
+# Get the present tool
+# TODO: I'd like to use the git repo but it seems not to work right now.
+# go get github.com/golang/tools/cmd/present
+echo "Installing cmd/present..."
+go get code.google.com/p/go.tools/cmd/present
 
-# # Get the docker client library
-# echo "Installing go-dockerclient..."
-# go get github.com/fsouza/go-dockerclient
+# Get the docker client library
+echo "Installing go-dockerclient..."
+go get github.com/fsouza/go-dockerclient
 
-# # Pull the nginx docker image.
-# docker pull nginx
+# Pull the nginx docker image.
+docker pull nginx
 
 # Run the tool so that the presentation can be viewed.
 # NOTE: For some reason the root user doesn't load /etc/environment so we add the
